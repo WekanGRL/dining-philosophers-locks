@@ -19,8 +19,7 @@ public class ChopStick {
         if (!csLock.tryLock(delay, TimeUnit.MILLISECONDS)) {
             return false; // Echec
         }
-        csLock.lock();
-        // Pas utile de faire notifyAll ici, personne n'attend qu'elle soit occupée
+        // Successfully locked chopstick
         return true; // Succès
     }
 
